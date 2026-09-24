@@ -1,0 +1,57 @@
+# Privacy Policy
+
+## Flaminguage Privacy Policy
+
+Your privacy is important to us. Flaminguage is an educational English vocabulary learning application designed to operate primarily on the user's device. The application does not require user registration or the submission of personal information.
+
+## Information Collection
+
+Flaminguage does not intentionally collect, store, transmit, or share personal information from its users.
+
+The application does not require:
+
+* User registration
+* Account creation
+* Email addresses
+* Passwords
+* Personal identification information
+
+The vocabulary, educational content, quizzes, games, and dictionary features are provided as part of the application itself.
+
+## Local Data Storage
+
+Any application-related data, such as user preferences, game progress, scores, or settings, may be stored locally on the user's device when required by the application's functionality.
+
+This information is used solely to provide and improve the intended functionality of Flaminguage and is not transmitted to or shared with external parties.
+
+## Vocabulary and Educational Content
+
+Flaminguage contains vocabulary, images, pronunciation resources, example sentences, quizzes, and other educational materials. These resources are used solely to provide the application's language-learning functionality.
+
+The application does not use this educational content to identify individual users or collect personal profiles.
+
+## Third-Party Services
+
+Flaminguage does not require users to create accounts with third-party services to use its core educational features.
+
+If future versions of the application introduce third-party services, such as analytics, online services, or external APIs, this Privacy Policy may be updated accordingly.
+
+## Children's Privacy
+
+Flaminguage is an educational application and does not intentionally collect personal information from children or other users.
+
+Because the application does not require account registration or the submission of personal information, users can access its core educational features without providing personal data.
+
+## Changes to This Privacy Policy
+
+This Privacy Policy may be updated in future versions of Flaminguage if new features, services, or technologies are introduced.
+
+Any changes will be reflected in an updated version of this document and, where appropriate, in subsequent releases of the application.
+
+## Contact
+
+If you have any questions, concerns, or suggestions regarding this Privacy Policy or Flaminguage, please refer to the project's official documentation or GitHub repository for further information.
+
+## Acceptance
+
+By using Flaminguage, you acknowledge and accept the practices described in this Privacy Policy.

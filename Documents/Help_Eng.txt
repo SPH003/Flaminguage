@@ -1,0 +1,79 @@
+﻿# How to Use Flaminguage
+
+Welcome to Flaminguage!
+
+Flaminguage is an educational English vocabulary learning application designed to help learners master practical vocabulary related to places, services, and everyday situations. The application is particularly useful for people preparing for immigration, travel, study abroad, or life in English-speaking countries, as it focuses on vocabulary commonly encountered in daily life.
+
+## Learning Modules
+
+The educational content is organized into six thematic categories:
+
+* Daily Services Provider Places
+* Economic Services
+* Educational Places
+* Government Places
+* Places
+* Residence
+
+Each vocabulary item is presented with:
+
+* An illustrative image
+* Its meaning
+* Audio pronunciation
+
+This combination of visual, textual, and auditory learning helps users understand and remember new words more effectively.
+
+At the end of each category, learners are presented with a set of multiple-choice questions to review and assess their understanding. After completing all questions, a score is calculated and the next category becomes available on the category selection screen.
+
+Please note that in the current version of the application, there is no minimum passing score required to unlock the next category. Users only need to complete all questions in the current section to continue their learning journey.
+
+## Vocabulary Typing Challenge
+
+The Vocabulary Typing Challenge is designed to improve vocabulary recognition, spelling, and typing speed.
+
+During the game, words fall from the top of the screen, and players must type them correctly before they reach the bottom.
+
+Features of this game mode include:
+
+* 10 starting lives
+* Loss of one life for each missed word
+* Gradually increasing difficulty and speed
+* Practice in vocabulary recall and typing accuracy
+
+This mode provides an engaging and enjoyable way to reinforce previously learned vocabulary.
+
+## Vocabulary Quiz
+
+The Vocabulary Quiz allows users to generate a customizable number of multiple-choice questions.
+
+Questions are selected randomly from the entire vocabulary database, providing an effective method for reviewing and testing knowledge across all categories.
+
+## Dictionary
+
+The Dictionary section contains all vocabulary items available in the application.
+
+For each word, users can view:
+
+* The English word
+* Its meaning
+* An example sentence or explanatory description
+
+This section serves as a convenient reference tool for reviewing vocabulary at any time.
+
+## Tips for Effective Learning
+
+To get the most benefit from Flaminguage:
+
+* Complete the learning categories in order.
+* Listen carefully to the pronunciation of each word.
+* Associate images with vocabulary meanings.
+* Regularly practice using the game modes and quizzes.
+* Review unfamiliar words through the Dictionary section.
+
+## Final Notes
+
+Flaminguage was created to combine education, interaction, and entertainment in a single learning experience. By integrating visual content, pronunciation support, quizzes, and educational games, the application aims to make vocabulary learning both effective and enjoyable.
+
+We hope Flaminguage helps you build the practical English vocabulary needed for everyday communication, travel, study, work, and life in international environments.
+
+Thank you for using Flaminguage, and happy learning!
