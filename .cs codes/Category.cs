@@ -156,6 +156,27 @@ namespace Flaminguage
                         pictureBox6.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox6d"));
 
                         break;
+
+                    case 7:
+
+                        pictureBox1.Enabled = false;
+                        pictureBox2.Enabled = false;
+                        pictureBox3.Enabled = false;
+                        pictureBox4.Enabled = false;
+                        pictureBox5.Enabled = false;
+                        pictureBox6.Enabled = false;
+
+                        label1.Enabled = false;
+
+                        pictureBox1.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox1f"));
+                        pictureBox2.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox2f"));
+                        pictureBox3.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox3f"));
+                        pictureBox4.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox4f"));
+                        pictureBox5.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox5f"));
+                        pictureBox6.ImageLocation = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Pictures\\Levels\\{0}.png", "pictureBox6f"));
+
+                        MessageBox.Show("Congratulations! You’ve completed all the missions! 🎉 \nWant to play again? Reset the application from the Settings menu and experience the levels once more. \nMore updates are coming soon...");
+                        break;
                 }
             }
             catch (Exception w)

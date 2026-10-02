@@ -31,6 +31,7 @@ namespace Flaminguage
         private int score = 0;
         private string correctAnswer = "";
         private string TextForExit;
+        private List<DataRow> testTable = new List<DataRow>();
         private DataTable wordsTable = new DataTable();
         private Random rnd = new Random();
 
@@ -119,14 +120,6 @@ namespace Flaminguage
 
         private void colors()
         {
-            button1.FlatStyle = FlatStyle.Flat;
-            button2.FlatStyle = FlatStyle.Flat;
-            button3.FlatStyle = FlatStyle.Flat;
-
-            button1.FlatAppearance.BorderColor = Color.FromArgb(255, 205, 178);
-            button2.FlatAppearance.BorderColor = Color.FromArgb(255, 205, 178);
-            button3.FlatAppearance.BorderColor = Color.FromArgb(255, 205, 178);
-
             this.BackColor = Color.FromArgb(69, 9, 32);
             pictureBox2.BackColor = Color.FromArgb(249, 107, 154);
             pictureBox3.BackColor = Color.FromArgb(249, 107, 154);
@@ -152,12 +145,33 @@ namespace Flaminguage
             label7.ForeColor = Color.FromArgb(255, 205, 178);
             label8.ForeColor = Color.FromArgb(255, 205, 178);
 
-            button1.ForeColor = Color.FromArgb(140, 41, 75);
-            button2.ForeColor = Color.FromArgb(140, 41, 75);
-            button3.ForeColor = Color.FromArgb(140, 41, 75);
-            button1.BackColor = Color.FromArgb(255, 205, 178);
-            button2.BackColor = Color.FromArgb(255, 205, 178);
-            button3.BackColor = Color.FromArgb(255, 205, 178);
+            roundedButton1.FlatStyle = FlatStyle.Flat;
+            roundedButton2.FlatStyle = FlatStyle.Flat;
+            roundedButton3.FlatStyle = FlatStyle.Flat;
+
+            roundedButton1.ForeColor = Color.FromArgb(69, 9, 32);
+            roundedButton2.ForeColor = Color.FromArgb(69, 9, 32);
+            roundedButton3.ForeColor = Color.FromArgb(69, 9, 32);
+
+            roundedButton1.BackColor = Color.FromArgb(140, 41, 75);
+            roundedButton2.BackColor = Color.FromArgb(140, 41, 75);
+            roundedButton3.BackColor = Color.FromArgb(140, 41, 75);
+            //Color.FromArgb(69, 9, 32);
+            roundedButton1.BorderColor = Color.FromArgb(69, 9, 32);
+            roundedButton2.BorderColor = Color.FromArgb(69, 9, 32);
+            roundedButton3.BorderColor = Color.FromArgb(69, 9, 32);
+
+            roundedButton1.BorderSize = 7;
+            roundedButton2.BorderSize = 7;
+            roundedButton3.BorderSize = 7;
+
+            roundedButton1.HoverColor = Color.FromArgb(255, 205, 178);
+            roundedButton2.HoverColor = Color.FromArgb(255, 205, 178);
+            roundedButton3.HoverColor = Color.FromArgb(255, 205, 178);
+
+            roundedButton1.PressedColor = Color.FromArgb(163, 73, 164);
+            roundedButton2.PressedColor = Color.FromArgb(163, 73, 164);
+            roundedButton3.PressedColor = Color.FromArgb(163, 73, 164);
         }
 
         private void sizing()
@@ -173,6 +187,10 @@ namespace Flaminguage
 
             roundedPanel1.Size = new Size(9 * (label5.ClientSize.Width / 3) / 10, 9 * label5.ClientSize.Height / 10);
             roundedPanel1.CornerRadius = 25;
+
+            roundedButton1.CornerRadius = 12;
+            roundedButton1.CornerRadius = 12;
+            roundedButton1.CornerRadius = 12;
 
             pictureBox2.Width = 3 * (roundedPanel1.ClientSize.Width) / 10;
             pictureBox2.Height = pictureBox2.ClientSize.Width;
@@ -216,16 +234,16 @@ namespace Flaminguage
                     pictureBox2.Location.Y);
 
             label8.Location = new Point(this.ClientSize.Width / 2 - label8.ClientSize.Width / 2,
-               label5.Location.Y + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+               label5.Location.Y + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
-            button2.Location = new Point(this.ClientSize.Width / 2 - button2.ClientSize.Width / 2,
-                  label8.Location.Y + label8.ClientSize.Height + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+            roundedButton2.Location = new Point(this.ClientSize.Width / 2 - roundedButton2.ClientSize.Width / 2,
+                  label8.Location.Y + label8.ClientSize.Height + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
-            button1.Location = new Point(this.ClientSize.Width / 2 - button1.ClientSize.Width / 2,
-                button2.Location.Y + button2.ClientSize.Height + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+            roundedButton1.Location = new Point(this.ClientSize.Width / 2 - roundedButton1.ClientSize.Width / 2,
+                roundedButton2.Location.Y + roundedButton2.ClientSize.Height + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
-            button3.Location = new Point(this.ClientSize.Width / 2 - button3.ClientSize.Width / 2,
-                button1.Location.Y + button1.ClientSize.Height + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+            roundedButton3.Location = new Point(this.ClientSize.Width / 2 - roundedButton3.ClientSize.Width / 2,
+                roundedButton1.Location.Y + roundedButton1.ClientSize.Height + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
         }
 
         private void texts()
@@ -235,13 +253,13 @@ namespace Flaminguage
                 label2.Font = new Font("FredokaLight", 16, FontStyle.Regular);
                 label3.Font = new Font("FredokaLight", 16, FontStyle.Regular);
                 label4.Font = new Font("FredokaLight", 16, FontStyle.Regular);
-                label6.Font = new Font("FredokaLight", 32, FontStyle.Regular);
+                label6.Font = new Font("FredokaLight", 18, FontStyle.Regular);
                 label7.Font = new Font("NunitoExtraLight", 26, FontStyle.Regular);
                 label8.Font = new Font("NunitoExtraLight", 32, FontStyle.Regular);
 
-                button1.Font = new Font("FredokaLight", 24, FontStyle.Bold);
-                button2.Font = new Font("FredokaLight", 24, FontStyle.Bold);
-                button3.Font = new Font("FredokaLight", 24, FontStyle.Bold);
+                roundedButton1.Font = new Font("FredokaLight", 36, FontStyle.Bold);
+                roundedButton2.Font = new Font("FredokaLight", 36, FontStyle.Bold);
+                roundedButton3.Font = new Font("FredokaLight", 36, FontStyle.Bold);
 
                 switch (Flaminguage.Properties.Settings.Default.Languageapp)
                 {
@@ -285,6 +303,30 @@ namespace Flaminguage
                 string sqlcode = string.Format("SELECT * FROM {0}", Tablename);
                 OleDbDataAdapter da = new OleDbDataAdapter(sqlcode, connectionString);
                 da.Fill(wordsTable);
+
+                // Shuffle the rows
+                testTable = wordsTable.AsEnumerable().ToList();
+
+                for (int i = testTable.Count - 1; i > 0; i--)
+                {
+                    int j = rnd.Next(i + 1);
+
+                    switch (DateTime.Now.Second % 2)
+                    {
+                        case 0:
+                            j = rnd.Next(i + 1);
+                            j = rnd.Next(i + 1);
+                            break;
+
+                        default:
+                            j = rnd.Next(i + 1);
+                            break;
+                    }
+
+                    DataRow temp = testTable[i];
+                    testTable[i] = testTable[j];
+                    testTable[j] = temp;
+                }
             }
             catch (Exception w)
             {
@@ -373,6 +415,7 @@ namespace Flaminguage
                     else
                     {
                         MessageBox.Show(TextForExit);
+                        Flaminguage.Properties.Settings.Default.level = 7;
                     }
 
                     Flaminguage.Properties.Settings.Default.Save();
@@ -389,8 +432,8 @@ namespace Flaminguage
 
                 //choosing random word
 
-                string word = wordsTable.Rows[currentIndex]["Word"].ToString();
-                correctAnswer = wordsTable.Rows[currentIndex]["Meaning"].ToString();
+                string word = testTable[currentIndex]["Word"].ToString();
+                correctAnswer = testTable[currentIndex]["Meaning"].ToString();
 
                 label8.AutoSize = false;
 
@@ -400,7 +443,7 @@ namespace Flaminguage
 
                 label8.AutoSize = true;
 
-                // label5.Width = label8.ClientSize .Width+button2 .ClientSize .Width + button3 .ClientSize .Width ;
+                // label5.Width = label8.ClientSize .Width+roundedButton2 .ClientSize .Width + roundedButton3 .ClientSize .Width ;
 
                 // Adding two other options for test
                 List<string> options = wordsTable.AsEnumerable()
@@ -417,39 +460,39 @@ namespace Flaminguage
                 options = options.OrderBy(x => rnd.Next()).ToList();
 
                 // Putting words in buttons text
-                button1.AutoSize = false;
-                button2.AutoSize = false;
-                button3.AutoSize = false;
+                roundedButton1.AutoSize = false;
+                roundedButton2.AutoSize = false;
+                roundedButton3.AutoSize = false;
 
-                button1.Width = 1;
-                button1.Height = 1;
-                button2.Width = 1;
-                button2.Height = 1;
-                button3.Width = 1;
-                button3.Height = 1;
+                roundedButton1.Width = 1;
+                roundedButton1.Height = 1;
+                roundedButton2.Width = 1;
+                roundedButton2.Height = 1;
+                roundedButton3.Width = 1;
+                roundedButton3.Height = 1;
 
-                button1.Text = options[0];
-                button2.Text = options[1];
-                button3.Text = options[2];
+                roundedButton1.Text = options[0];
+                roundedButton2.Text = options[1];
+                roundedButton3.Text = options[2];
 
-                button1.AutoSize = true;
-                button2.AutoSize = true;
-                button3.AutoSize = true;
+                roundedButton1.AutoSize = true;
+                roundedButton2.AutoSize = true;
+                roundedButton3.AutoSize = true;
 
                 //        label5.Location = new Point(this.ClientSize.Width / 2 - label5.ClientSize.Width / 2,
                 //          this.ClientSize.Height / 2 - label5.ClientSize.Height / 2);
 
                 label8.Location = new Point(this.ClientSize.Width / 2 - label8.ClientSize.Width / 2,
-                label5.Location.Y + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+                label5.Location.Y + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
-                button2.Location = new Point(this.ClientSize.Width / 2 - button2.ClientSize.Width / 2,
-                      label8.Location.Y + label8.ClientSize.Height + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+                roundedButton2.Location = new Point(this.ClientSize.Width / 2 - roundedButton2.ClientSize.Width / 2,
+                      label8.Location.Y + label8.ClientSize.Height + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
-                button1.Location = new Point(this.ClientSize.Width / 2 - button1.ClientSize.Width / 2,
-                    button2.Location.Y + button2.ClientSize.Height + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+                roundedButton1.Location = new Point(this.ClientSize.Width / 2 - roundedButton1.ClientSize.Width / 2,
+                    roundedButton2.Location.Y + roundedButton2.ClientSize.Height + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
-                button3.Location = new Point(this.ClientSize.Width / 2 - button3.ClientSize.Width / 2,
-                    button1.Location.Y + button1.ClientSize.Height + (label5.ClientSize.Height - (3 * button1.ClientSize.Height) - label8.ClientSize.Height) / 5);
+                roundedButton3.Location = new Point(this.ClientSize.Width / 2 - roundedButton3.ClientSize.Width / 2,
+                    roundedButton1.Location.Y + roundedButton1.ClientSize.Height + (label5.ClientSize.Height - (3 * roundedButton1.ClientSize.Height) - label8.ClientSize.Height) / 5);
 
                 currentIndex++;
                 currentQuestion++;
@@ -469,7 +512,7 @@ namespace Flaminguage
             }
             else
             {
-                MessageBox.Show("❌ Wrong!");
+                MessageBox.Show(string.Format("❌ Wrong! \nThe correct answer is: **{0}**", correctAnswer));
             }
 
             LoadQuestion();
@@ -487,9 +530,9 @@ namespace Flaminguage
             if (currentIndex >= wordsTable.Rows.Count)
             {
                 label8.Visible = true;
-                button1.Visible = true;
-                button2.Visible = true;
-                button3.Visible = true;
+                roundedButton1.Visible = true;
+                roundedButton2.Visible = true;
+                roundedButton3.Visible = true;
 
                 roundedPanel1.Visible = false;
                 label6.Visible = false;
@@ -502,9 +545,9 @@ namespace Flaminguage
                 pictureBox4.Visible = false;
                 pictureBox4.Enabled = false;
 
-                button1.Enabled = true;
-                button2.Enabled = true;
-                button3.Enabled = true;
+                roundedButton1.Enabled = true;
+                roundedButton2.Enabled = true;
+                roundedButton3.Enabled = true;
 
                 totalQuestions = wordsTable.Rows.Count;
                 currentIndex = 0;
@@ -539,19 +582,19 @@ namespace Flaminguage
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void roundedButton1_Click(object sender, EventArgs e)
         {
-            CheckAnswer(button1);
+            CheckAnswer(roundedButton1);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void roundedButton2_Click(object sender, EventArgs e)
         {
-            CheckAnswer(button2);
+            CheckAnswer(roundedButton2);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void roundedButton3_Click(object sender, EventArgs e)
         {
-            CheckAnswer(button3);
+            CheckAnswer(roundedButton3);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -569,7 +612,7 @@ namespace Flaminguage
             label8.Font.Dispose();
             label7.Font.Dispose();
             label2.Font.Dispose();
-            button1.Font.Dispose();
+            roundedButton1.Font.Dispose();
         }
 
         private void label3_MouseEnter(object sender, EventArgs e)

@@ -24,7 +24,7 @@ namespace Flaminguage
         public int i = 0;
         public int j = 2;
         public string userword, TableName;
-        public string TextForExit, GameOver;
+        public string TextForExit, GameOver, instroduction;
 
         public TypeSpeed()
         {
@@ -69,6 +69,7 @@ namespace Flaminguage
             locationLabel1(2);
             locationLabel1(3);
 
+            MessageBox.Show(instroduction, "Guide", MessageBoxButtons.OK, MessageBoxIcon.Information);
             timer1.Enabled = true;
 
             PlayMusicAndMessage();
@@ -117,7 +118,12 @@ namespace Flaminguage
                     case "eng":
 
                         label4.Text = "";
-
+                        instroduction = "You can type words in the typing box at the bottom of the screen." +
+                            "The game starts and words appear from the top of screen.\n\n\n" +
+                            "- Press Enter while typing into the box or use the left mouse button and click the done button to check your answer.\n\n" +
+                            "- Each misspelled word makes you lose one point. Be careful! Too many mistakes can result in a negative score! \n\n" +
+                            "- You can also change the music by right-clicking inside the screen.\n\n\n" +
+                            "                               *** Good luck! ***";
                         label5.Text = "Life: ";
                         label6.Text = "Score:";
                         label7.Text = "";
@@ -135,7 +141,12 @@ namespace Flaminguage
                         label7.Text = "";
                         TextForExit = "Es-tu sûr?";
                         GameOver = "Jeu terminé";
-
+                        instroduction = "Vous pouvez saisir les mots dans la zone de saisie située en bas de l’écran." +
+                            "Le jeu commence et les mots apparaissent en haut de l’écran.\n\n\n" +
+                            "- Appuyez sur Entrée pendant que vous tapez dans la zone de saisie, ou utilisez le bouton gauche de la souris et cliquez sur le bouton « Terminé » pour vérifier votre réponse.\n\n" +
+                            "- Chaque mot mal orthographié vous fait perdre un point. Attention ! Trop d’erreurs peuvent entraîner un score négatif ! \n\n" +
+                            "- Vous pouvez également changer la musique en faisant un clic droit n’importe où sur l’écran.\n\n\n" +
+                            "                               *** Bonne chance! ***";
                         break;
                 }
             }
@@ -487,6 +498,7 @@ namespace Flaminguage
                 }
 
                 textBox1.Clear();
+                textBox1.Focus();
             }
             catch (Exception w)
             {

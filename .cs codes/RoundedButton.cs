@@ -7,11 +7,17 @@ using System.Windows.Forms;
 namespace Flaminguage
 {
     [ToolboxItem(true)]
-    public class RoundedPanel : Panel
+    public class RoundedButton : Button
     {
         private int cornerRadius = 20;
         private int borderSize = 0;
+
         private Color borderColor = Color.Black;
+        private Color hoverColor;
+        private Color pressedColor;
+
+        private bool isHover;
+        private bool isPressed;
 
         [Category("Appearance")]
         public int CornerRadius
@@ -47,19 +53,37 @@ namespace Flaminguage
             }
         }
 
-        public RoundedPanel()
+        [Category("Appearance")]
+        public Color HoverColor
         {
+            get { return hoverColor; }
+            set { hoverColor = value; }
+        }
+
+        [Category("Appearance")]
+        public Color PressedColor
+        {
+            get { return pressedColor; }
+            set { pressedColor = value; }
+        }
+
+        public RoundedButton()
+        {
+            FlatStyle = FlatStyle.Flat;
+            FlatAppearance.BorderSize = 0;
+
+            hoverColor = Color.LightGray;
+            pressedColor = Color.Gray;
+
             SetStyle(ControlStyles.UserPaint |
                      ControlStyles.AllPaintingInWmPaint |
                      ControlStyles.OptimizedDoubleBuffer |
                      ControlStyles.ResizeRedraw, true);
-
-            UpdateRegion();
         }
 
-        protected override void OnResize(EventArgs eventargs)
+        protected override void OnResize(EventArgs e)
         {
-            base.OnResize(eventargs);
+            base.OnResize(e);
             UpdateRegion();
         }
 
@@ -76,17 +100,51 @@ namespace Flaminguage
             }
         }
 
+        protected override void OnMouseEnter(EventArgs e)
+        {
+            isHover = true;
+            Invalidate();
+            base.OnMouseEnter(e);
+        }
+
+        protected override void OnMouseLeave(EventArgs e)
+        {
+            isHover = false;
+            isPressed = false;
+            Invalidate();
+            base.OnMouseLeave(e);
+        }
+
+        protected override void OnMouseDown(MouseEventArgs mevent)
+        {
+            isPressed = true;
+            Invalidate();
+            base.OnMouseDown(mevent);
+        }
+
+        protected override void OnMouseUp(MouseEventArgs mevent)
+        {
+            isPressed = false;
+            Invalidate();
+            base.OnMouseUp(mevent);
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
-            base.OnPaint(e);
-
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            Color fillColor = BackColor;
+
+            if (isPressed)
+                fillColor = pressedColor;
+            else if (isHover)
+                fillColor = hoverColor;
 
             using (GraphicsPath path = GetRoundPath(
                 new Rectangle(0, 0, Width - 1, Height - 1),
                 cornerRadius))
             {
-                using (SolidBrush brush = new SolidBrush(BackColor))
+                using (SolidBrush brush = new SolidBrush(fillColor))
                 {
                     e.Graphics.FillPath(brush, path);
                 }
@@ -98,6 +156,15 @@ namespace Flaminguage
                         e.Graphics.DrawPath(pen, path);
                     }
                 }
+
+                TextRenderer.DrawText(
+                    e.Graphics,
+                    Text,
+                    Font,
+                    ClientRectangle,
+                    ForeColor,
+                    TextFormatFlags.HorizontalCenter |
+                    TextFormatFlags.VerticalCenter);
             }
         }
 
