@@ -319,6 +319,8 @@ The license of a third-party resource does not change the license of the origina
 
 The development of Flaminguage benefited from an educational process involving discussions, exercises, and feedback with two students.
 
+Special thanks to  A.SalehJalali and M.NayerAbadi for their participation in classroom learning activities, brainstorming sessions, design discussions, and feedback exercises associated with the project.
+
 Their participation was intended to provide practical exposure to software-development concepts, including idea generation, design discussions, interface considerations, audio-related activities, and the process of taking an application from an initial concept toward a working product.
 
 Their involvement should be understood as part of the **educational context of the project** and does not constitute authorship, ownership, or development responsibility for the Flaminguage software.
